@@ -5,4 +5,4 @@
   tasks:
     - name: checking if vars are working
       ansible.builtin.debug:
-        msg: {{URL}} checking if url is working 
+        msg: checking if {{URL}} is working 

@@ -5,4 +5,11 @@
   tasks:
     - name: checking if vars are working
       ansible.builtin.debug:
-        msg: checking if {{URL}} is working 
+        msg: checking if {{URL}} is working
+
+    - name: This is task 2
+      ansible.builtin.debug:
+        msg: "checking if {{URL}} is working"
+      vars:
+        URL: tasks.google.com
+

@@ -1,0 +1,9 @@
+
+#a fact is nothing but property of a machine
+
+- name: osdist
+  hosts: all
+  tasks:
+    - name: task 1
+      ansible.builtin.debug:
+        msg: os distribution = {{ansible_distribution}}

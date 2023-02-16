@@ -1,9 +1,8 @@
-
 #a fact is nothing but property of a machine
 
-- name: osdist
+- name: demo shell module
   hosts: all
   tasks:
     - name: task 1
-      ansible.builtin.debug:
-        msg: os distribution = {{ansible_distribution}}
+      ansible.builtin.shell: uptime
+      register: out

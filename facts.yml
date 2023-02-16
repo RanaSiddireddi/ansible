@@ -7,6 +7,10 @@
       ansible.builtin.shell: uptime
       register: out
     
-    - name: task 1
+    - name: task 2
       ansible.builtin.debug:
         msg: "{{out.stdout}}"
+
+    - name: declaring the variable
+      ansible.builtin.set_fact:
+        STATUS: "{{out.rc}}"

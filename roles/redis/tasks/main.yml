@@ -1,7 +1,4 @@
 
-- name: set-hostname
-  ansible.builtin.shell: sudo set-hostname {{COMPONENT}}
-
 - name: downloading redis repo
   ansible.builtin.copy:
     src: redis.repo
@@ -11,6 +8,27 @@
   ansible.builtin.package:
     name: redis-6.2.9
     state: present
+
+- name: updating redis conf service
+  ansible.builtin.replace:
+    path: /etc/redis/redis.conf
+    regexp: '127.0.0.1'
+    replace: '0.0.0.0'
+
+- name: updating redis conf service
+  ansible.builtin.replace:
+    path: /etc/redis.conf
+    regexp: '127.0.0.1'
+    replace: '0.0.0.0'
+
+- name: restarting the service
+  ansible.builtin.systemd:
+    name: "{{COMPONENT}}"
+    state: restarted
+    enabled: true
+
+- name: set-hostname
+  ansible.builtin.shell: sudo set-hostname {{COMPONENT}}
 
 
 

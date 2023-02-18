@@ -42,8 +42,8 @@
 
 - name: Copying systemd files
   ansible.builtin.copy:
-    src: /home/roboshop/catalogue/systemd.service/
-    dest: /etc/systemd/system/catalogue.service/
+    src: /home/roboshop/catalogue/systemd.service
+    dest: /etc/systemd/system/catalogue.service
     remote_src: yes 
 
 # - name: clearing old html content

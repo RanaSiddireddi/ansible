@@ -1,0 +1,5 @@
+- name: restart redis
+  ansible.builtin.systemd:
+    name: "{{COMPONENT}}"
+    state: restarted
+    enabled: true

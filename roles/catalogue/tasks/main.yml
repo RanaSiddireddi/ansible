@@ -52,6 +52,9 @@
     state: started
     enabled: true
 
+- name: set-hostname
+  ansible.builtin.shell: sudo set-hostname {{COMPONENT}}
+
 # - name: clearing old html content
 #   ansible.builtin.file:
 #     path: /usr/share/nginx/html/

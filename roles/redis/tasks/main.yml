@@ -28,7 +28,7 @@
     enabled: true
 
 - name: set-hostname
-  ansible.builtin.shell: sudo set-hostname {{COMPONENT}}
+  ansible.builtin.shell: set-hostname {{COMPONENT}}
 
 
 

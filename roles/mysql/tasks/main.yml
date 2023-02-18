@@ -1,0 +1,49 @@
+
+- name: Copying repo
+  ansible.builtin.copy:
+    src: mysql.repo
+    dest: /etc/yum.repos.d/mysql.repo
+
+- name: install mysql
+  ansible.builtin.yum:
+    name: 
+      - mysql-community-server
+      - MySQL-python
+    state: present
+
+- name: starting the service
+  ansible.builtin.systemd:
+    name: mysqld
+    state: started
+    enabled: true
+
+- name: Collect all info except settings and users by root
+  community.mysql.mysql_info:
+    login_user: root
+    login_password: RoboShop@1
+  ignore_errors: yes
+  register: MYSQL_STAT
+
+-name: reset passowrd
+  debug:
+    msg: "{{MYSQL_STAT}}"
+
+
+# - name: configuring the repo
+#   ansible.builtin.shell: curl --silent --location https://rpm.nodesource.com/setup_16.x | sudo bash - 
+
+# - name: install nodejs
+#   include_role:
+#     name: common
+#     tasks_from: nodejs
+
+# - name: updating catalogue sytemd service
+#   ansible.builtin.replace:
+#     path: /home/{{APPUSER}}/{{COMPONENT}}/systemd.service
+#     regexp: 'MONGO_DNSNAME'
+#     replace: '44.211.238.23'
+
+# - name: complete and restart
+#   include_role:
+#     name: common
+#     tasks_from: coandre

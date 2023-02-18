@@ -46,6 +46,12 @@
     dest: /etc/systemd/system/catalogue.service
     remote_src: yes 
 
+- name: restarting the service
+  ansible.builtin.systemd:
+    name: {{COMPONENT}}
+    state: started
+    enabled: true
+
 # - name: clearing old html content
 #   ansible.builtin.file:
 #     path: /usr/share/nginx/html/

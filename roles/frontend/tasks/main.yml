@@ -23,7 +23,7 @@
 - name: start frontend service
   ansible.builtin.service:
     name: nginx
-    state: start
+    state: started
     enabled: true
 
 - name: copying nginx content

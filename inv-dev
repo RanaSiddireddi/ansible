@@ -6,3 +6,6 @@
 
 [catalogue]
 catalogue-qa.roboshop.internal
+
+[redis]
+redis-dev.roboshop.internal

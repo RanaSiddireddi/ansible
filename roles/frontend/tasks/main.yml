@@ -26,7 +26,7 @@
     state: started
     enabled: true
 
-- name: copying nginx content
+- name: restarting nginx
   ansible.builtin.copy:
     src: roboshop.conf
     dest: /etc/nginx/default.d/roboshop.conf

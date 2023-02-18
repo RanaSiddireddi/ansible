@@ -3,3 +3,6 @@
 
 [mongodb]
 44.211.238.23
+
+[catalogue]
+catalogue-qa.roboshop.internal

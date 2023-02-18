@@ -25,7 +25,10 @@
     dest: /tmp
     remote_src: yes
 
-- name: inject the schema
+- name: inject the catalogue and users schema
   community.mongodb.mongodb_shell:
-    file: "/tmp/mongodb-main/catalogue.js"
+    file: "/tmp/mongodb-main/{{item}}.js"
     idempotent: yes
+  loop: 
+    -catalogue
+    -users

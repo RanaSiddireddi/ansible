@@ -48,7 +48,7 @@
 
 - name: Copying systemd files
   ansible.builtin.copy:
-    src: /home/roboshop/catalogue/systemd.service
+    src: /home/roboshop/{{COMPONENT}}/systemd.service
     dest: /etc/systemd/system/{{COMPONENT}}.service
     remote_src: yes 
 

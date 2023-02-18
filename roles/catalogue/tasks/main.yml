@@ -2,7 +2,7 @@
   ansible.builtin.shell: curl --silent --location https://rpm.nodesource.com/setup_16.x | sudo bash - 
 
 - name: install nodejs
-  include_rols:
+  include_role:
     name: common
     tasks_from: nodejs
 
@@ -13,6 +13,6 @@
     replace: '44.211.238.23'
 
 - name: install nodejs
-  include_rols:
+  include_role:
     name: common
     tasks_from: coandre

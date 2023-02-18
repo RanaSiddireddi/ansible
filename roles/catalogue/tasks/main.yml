@@ -34,6 +34,18 @@
   community.general.npm:
     path: /home/{{APPUSER}}/{{COMPONENT}}/
 
+- name: updating catalogue sytemd service
+  ansible.builtin.replace:
+    path: /home/{{APPUSER}}/{{COMPONENT}}/systemd.service
+    regexp: 'MONGO_DNSNAME'
+    replace: '44.211.238.23'
+
+- name: Copying systemd files
+  ansible.builtin.copy:
+    src: /home/roboshop/catalogue/systemd.service/
+    dest: /etc/systemd/system/catalogue.service/
+    remote_src: yes 
+
 # - name: clearing old html content
 #   ansible.builtin.file:
 #     path: /usr/share/nginx/html/

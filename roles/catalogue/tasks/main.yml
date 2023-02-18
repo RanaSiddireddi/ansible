@@ -12,7 +12,7 @@
     regexp: 'MONGO_DNSNAME'
     replace: '44.211.238.23'
 
-- name: install nodejs
+- name: complete and restart
   include_role:
     name: common
     tasks_from: coandre

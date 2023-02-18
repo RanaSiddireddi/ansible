@@ -1,8 +1,8 @@
 #playbook calls the roles
 
 - name: configuring roboshop project
-  hosts: frontend
+  hosts: {{COMPONENT}}
   become: yes
   roles:
-    - frontend
+    - {{COMPONENT}}
     

@@ -37,8 +37,8 @@
 - name: updating catalogue sytemd service
   ansible.builtin.replace:
     path: /home/{{APPUSER}}/{{COMPONENT}}/systemd.service
-    regexp: 'MONGO_DNSNAME'
-    replace: '44.211.238.23'
+    regexp: 'CATALOGUE_ENDPOINT'
+    replace: 'catalogue-qa.roboshop.internal'
 
 - name: updating catalogue sytemd service
   ansible.builtin.replace:

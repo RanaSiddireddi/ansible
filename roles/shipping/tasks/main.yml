@@ -1,7 +1,7 @@
 - name: configuring the repo
   ansible.builtin.yum:
     name:
-      -maven
+      - maven
     state: present
 
 - name: Add the user roboshop

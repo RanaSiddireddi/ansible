@@ -29,6 +29,24 @@
     chdir: /home/{{APPUSER}}/{{COMPONENT}}/
   become_user: "{{APPUSER}}"
 
+- name: updating cart dns
+  ansible.builtin.replace:
+    path: /home/{{APPUSER}}/{{COMPONENT}}/systemd.service
+    regexp: 'CARTENDPOINT'
+    replace: 'cart-dev.roboshop.internal'
+
+- name: updating cart dns
+  ansible.builtin.replace:
+    path: /home/{{APPUSER}}/{{COMPONENT}}/systemd.service
+    regexp: 'DBHOST'
+    replace: 'mysql-dev.roboshop.internal'
+
+- name: complete and restart
+  include_role:
+    name: common
+    tasks_from: coandre
+
+
 
 # - name: updating catalogue sytemd service
 #   ansible.builtin.replace:

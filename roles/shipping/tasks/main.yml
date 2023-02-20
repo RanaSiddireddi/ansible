@@ -2,7 +2,7 @@
   ansible.builtin.yum:
     name:
       -maven
-  state: present
+    state: present
 
 - name: Add the user roboshop
   ansible.builtin.user:

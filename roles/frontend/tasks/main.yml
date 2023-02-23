@@ -25,6 +25,7 @@
     name: nginx
     state: started
     enabled: true
+    daemon-reload: true
 
 - name: restarting nginx
   ansible.builtin.copy:

@@ -31,5 +31,4 @@
     src: roboshop.conf
     dest: /etc/nginx/default.d/roboshop.conf
   notify: restart nginx
-  ignore_errors: yes
 

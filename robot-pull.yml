@@ -1,6 +1,6 @@
 
 - name: configuring roboshop project
-  hosts: "{{COMPONENT}}"
+  hosts: localhost
   become: yes
   roles:
     - "{{COMPONENT}}"

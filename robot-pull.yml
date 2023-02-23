@@ -1,0 +1,7 @@
+
+- name: configuring roboshop project
+  hosts: "{{COMPONENT}}"
+  become: yes
+  roles:
+    - "{{COMPONENT}}"
+    

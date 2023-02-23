@@ -7,7 +7,7 @@
 - name: Add the user roboshop
   ansible.builtin.user:
     name: "{{APPUSER}}"
-    comment: roboshop service account
+    comment: roboshop service account 
 
 - name: downloading and extracting {{COMPONENT}}
   ansible.builtin.unarchive:
